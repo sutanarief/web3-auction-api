@@ -5,7 +5,14 @@ const Schema = mongoose.Schema
 const UserSchema = Schema ({
   address: String,
   balance: Number,
+<<<<<<< HEAD
   isLogin: Boolean,
+=======
+  isLogin: {
+    type: Boolean,
+    default: false
+  },
+>>>>>>> 5ef1d9043a7e698889a06e488045a35b95fb636b
   itemIds: [{
     type: Schema.Types.ObjectId,
     ref: "Item"
