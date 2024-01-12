@@ -25,3 +25,8 @@ const BidSchema = new Schema({
 //   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 //   item      Item     @relation(fields: [itemId], references: [id])
 // }
+
+
+const Bid = mongoose.model("Bid", BidSchema)
+
+module.exports = Bid

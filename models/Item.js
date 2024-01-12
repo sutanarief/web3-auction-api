@@ -71,3 +71,8 @@ const ItemSchema = new Schema ({
 //   bids    Bid[]
 //   History History[]
 // }
+
+
+const Item = mongoose.model("Item", ItemSchema)
+
+module.exports = Item
