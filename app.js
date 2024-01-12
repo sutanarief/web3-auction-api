@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }))
 
-app.post('/git', (req, res) => {
+app.post('/git/web3-auction', (req, res) => {
   const hmac = crypto.createHmac('sha1', process.env.SECRET);
   const sig  = 'sha1=' + hmac.update(JSON.stringify(req.body)).digest('hex');
   if (req.headers['x-github-event'] === 'push' &&
