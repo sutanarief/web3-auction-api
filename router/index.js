@@ -1,12 +1,12 @@
 const router = require('express').Router()
 const userRouter = require('./user')
-// const companyEventRouter = require('./company_event')
-// const eventRouter = require('./event')
+const itemRouter = require('./item')
+const bidRouter = require('./bid')
 
 
 router.use('/user', userRouter)
-// router.use('/company-event', companyEventRouter)
-// router.use('/events', eventRouter)
+router.use('/item', itemRouter)
+router.use('/bid', bidRouter)
 
 
 
