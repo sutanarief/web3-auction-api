@@ -23,9 +23,9 @@ app.post('/git/web3-auction', (req, res) => {
   if (req.headers['x-github-event'] === 'push' &&
     crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(req.headers['x-hub-signature']))) {
     res.sendStatus(200);
-    const commands = ['git fetch origin master',
-                      'git reset --hard origin/master',
-                      'git pull origin master --force',
+    const commands = ['git fetch origin main',
+                      'git reset --hard origin/main',
+                      'git pull origin main --force',
                       'npm install',
                       // your build commands here
                       'refresh']; // fixes glitch ui
