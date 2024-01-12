@@ -5,7 +5,10 @@ const Schema = mongoose.Schema
 const UserSchema = Schema ({
   address: String,
   balance: Number,
-  isLogin: Boolean,
+  isLogin: {
+    type: Boolean,
+    default: false
+  },
   itemIds: [{
     type: Schema.Types.ObjectId,
     ref: "Item"
