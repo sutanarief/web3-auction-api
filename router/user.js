@@ -3,7 +3,8 @@ const user = require('../controllers/userController')
 
 router.get('/', user.getUser)
 router.get('/:address', user.getUserById)
-router.post('/register', user.createUser)
+router.post('/auth/login', user.loginUser)
+router.put('/auth/logout', user.logoutUser)
 // router.post('/login', user.login)
 
 module.exports = router

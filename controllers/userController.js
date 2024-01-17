@@ -1,14 +1,23 @@
 const User = require('../models/User')
 
-const createUser = async (req, res) => {
+const loginUser = async (req, res) => {
   try {
     const payload = req.body
     const user = await User.create(payload)
-    console.log(user)
     res.status(201).json({ data: user, msg: "Success create user"})
   } catch (error) {
     console.log(error)
     res.status(400).json({msg: "Fail create user"})
+  }
+}
+
+const logoutUser = async (req, res) => {
+  try {
+    const filter = { address: req.body.addres}
+    const update = { isLogin: false }
+    await User.findOneAndUpdate()
+  } catch (error) {
+    
   }
 }
 
@@ -34,7 +43,7 @@ const getUser = async (req, res) => {
 }
 
 module.exports = {
-  createUser,
+  loginUser,
   getUser,
   getUserById
 }

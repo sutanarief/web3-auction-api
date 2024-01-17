@@ -7,7 +7,6 @@ const UserSchema = Schema ({
   balance: Number,
   isLogin: {
     type: Boolean,
-    default: false
   },
   itemIds: [{
     type: Schema.Types.ObjectId,
