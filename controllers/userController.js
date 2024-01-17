@@ -29,7 +29,7 @@ const editUser = async (req, res) => {
     await User.findOneAndUpdate(filter, update)
     res.status(200).json({ data: null, msg: 'success'})
   } catch (error) {
-    res.status(400).json((data: error, msg: 'error login'))
+    res.status(400).json({data: error, msg: 'error login'})
   }
 }
 
