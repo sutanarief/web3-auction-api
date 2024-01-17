@@ -1,4 +1,5 @@
 const Item = require('../models/Item')
+const { editUser } = require('./userController')
 
 const createItem = async (req, res) => {
   try {

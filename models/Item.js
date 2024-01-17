@@ -19,11 +19,11 @@ const ItemSchema = new Schema ({
     default: Date.now
   },
   ownerId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   },
   winnerId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   },
   winnerBidId: {
@@ -31,11 +31,11 @@ const ItemSchema = new Schema ({
     ref: "Bid"
   },
   joinedUserIds: [{
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   }],
   watchBy: [{
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   }],
   bids: [{
