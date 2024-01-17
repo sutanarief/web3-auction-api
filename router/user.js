@@ -5,6 +5,6 @@ router.get('/', user.getUser)
 router.get('/:address', user.getUserById)
 router.post('/auth/login', user.loginUser)
 router.put('/auth/logout', user.logoutUser)
-// router.post('/login', user.login)
+router.put('/edit/:address', user.editUser)
 
 module.exports = router
