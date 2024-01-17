@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const BidSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   },
   itemId: {

@@ -14,7 +14,7 @@ const createBid = async (req, res) => {
 const getBid = async (req, res) => {
   try {
     const itemId = req.params.id
-    const bid = await Bid.find({ id: itemId })
+    const bid = await Bid.find({ itemId })
     res.status(200).json({data: bid, msg: "Success get bid"})
   } catch (error) {
     console.log(error)
