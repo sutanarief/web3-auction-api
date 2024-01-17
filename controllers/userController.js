@@ -16,8 +16,9 @@ const logoutUser = async (req, res) => {
     const filter = { address: req.body.addres}
     const update = { isLogin: false }
     await User.findOneAndUpdate()
+    res.status(200).json({ data: null, msg: 'logged in'})
   } catch (error) {
-    
+    res.status(400).json({ data: error, msg: 'error login'})
   }
 }
 
@@ -44,6 +45,7 @@ const getUser = async (req, res) => {
 
 module.exports = {
   loginUser,
+  logoutUser,
   getUser,
   getUserById
 }
