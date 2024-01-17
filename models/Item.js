@@ -20,11 +20,11 @@ const ItemSchema = new Schema ({
     default: Date.now
   },
   ownerId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   },
   winnerId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "User"
   },
   winnerBidId: {
