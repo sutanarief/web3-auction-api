@@ -12,10 +12,21 @@ const createUser = async (req, res) => {
   }
 }
 
+const getUserById = async (req ,res) => {
+  try {
+    const address = req.params.address
+    const user = await User.findOne({ address })
+    res.status(200).json({ data: user, msg: "Success get user detail"})
+  } catch (error) {
+    console.log(error)
+    res.status(400).json({ msg: "Fail get detail user" })
+  }
+}
+
 const getUser = async (req, res) => {
   try {
-    const user = await User.find()
-    res.status(200).json({data: user, msg: "Success get user"})
+    const users = await User.find()
+    res.status(200).json({data: users, msg: "Success get user"})
   } catch (error) {
     console.log(error)
     res.status(400).json({msg: "Fail get user"})
@@ -24,5 +35,6 @@ const getUser = async (req, res) => {
 
 module.exports = {
   createUser,
-  getUser
+  getUser,
+  getUserById
 }
