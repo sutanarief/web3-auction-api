@@ -7,6 +7,7 @@ const ItemSchema = new Schema ({
   startDate: Date,
   endDate: Date,
   isActive: Boolean,
+  imageSrc: String,
   isEnded: Boolean,
   buyoutPrice: Number,
   initialPrice: Number,
