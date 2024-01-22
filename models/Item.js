@@ -41,7 +41,7 @@ const ItemSchema = new Schema ({
   }],
   bids: [{
     type: Schema.Types.ObjectId,
-    ref: "bids"
+    ref: "Bid"
   }]
 })
 
