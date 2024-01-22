@@ -23,7 +23,22 @@ const getItem = async (req, res) => {
   }
 }
 
+const claimItem = async (req, res) => {
+  try {
+    const { itemId } = req.body
+    const itemDetail = await Item.find({ _id: itemId })
+    const filter = { _id: itemId }
+    const update = { ownerId: item.winnerId }
+    const item = await Item.findOneAndUpdate(filter, update)
+    res.status(200).json({ data: item, msg: 'success update item'})
+  } catch (error) {
+    console.log(error)
+    res.status(400).json({msg: "Fail update Item"})
+  }
+}
+
 module.exports = {
   createItem,
-  getItem
+  getItem,
+  claimItem
 }
