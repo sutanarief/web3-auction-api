@@ -15,7 +15,7 @@ const createItem = async (req, res) => {
 
 const getItem = async (req, res) => {
   try {
-    const item = await Item.find().populate('bids', 'amount').exec()
+    const item = await Item.find().populate('bids').exec()
     res.status(200).json({data: item, msg: "Success get Item"})
   } catch (error) {
     console.log(error)

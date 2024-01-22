@@ -4,7 +4,11 @@ const Item = require('../models/Item')
 const createBid = async (req, res) => {
   try {
     const payload = req.body
+    const item = await Item.findById(payload.itemId)
     const bid = await Bid.create(payload)
+    item.bids.push(bid)
+    await item.save()
+
     res.status(201).json({ data: bid, msg: "Success create bid"})
   } catch (error) {
     console.log(error)
